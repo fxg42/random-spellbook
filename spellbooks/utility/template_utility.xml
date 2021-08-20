@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <template name="button_item_spellbook">
+    <button_text_sm>
+      <anchored to="buttonanchor" width="75">
+        <top />
+        <left anchor="right" relation="relative" offset="5" />
+      </anchored>
+      <state textres="item_button_spellbook" />
+      <script>
+        function onButtonPress()
+          Interface.openWindow("spellbooks", "spellbooks.generator");
+        end
+      </script>
+    </button_text_sm>
+  </template>
+
+  <template name="spellbook_header">
+    <label>
+      <anchored>
+        <top parent="columnanchor" anchor="bottom" relation="relative" offset="7" />
+        <left parent="columnanchor" offset="0"/>
+      </anchored>
+    </label>
+  </template>
+
+  <template name="spellbook_label">
+    <label>
+      <anchored width="90">
+        <top parent="columnanchor" anchor="bottom" relation="current" offset="7" />
+        <left parent="columnanchor" offset="0"/>
+      </anchored>
+    </label>
+  </template>
+
+  <template name="spellbook_input">
+    <simplestring>
+      <anchored>
+        <top parent="columnanchor" anchor="bottom" relation="relative" offset="7"/>
+        <left parent="columnanchor" offset="110"/>
+        <right offset="-37"/>
+      </anchored>
+      <frame mergerule="replace" name="fielddark" offset="10,5,10,5" hidereadonly="true" />
+      <stateframe>
+        <keyedit name="fieldfocus" offset="10,5,10,5" />
+        <hover name="fieldfocus" offset="10,5,10,5" hidereadonly="true" />
+        <drophilight name="fieldfocus" offset="10,5,10,5" hidereadonly="true" />
+      </stateframe>
+      <multilinespacing>20</multilinespacing>
+    </simplestring>
+  </template>
+
+  <template name="spellbook_divider">
+    <genericcontrol>
+      <anchored height="3">
+        <top parent="columnanchor" anchor="bottom" relation="relative" offset="14"/>
+        <left parent="columnanchor" offset="0"/>
+        <right offset="-30"/>
+      </anchored>
+      <frame name="separatorline" />
+      <disabled />
+    </genericcontrol>
+  </template>
+
+  <template name="spellbook_combobox">
+    <combobox>
+      <anchored height="20">
+        <top parent="columnanchor" anchor="bottom" relation="relative" offset="7"/>
+        <left parent="columnanchor" offset="107"/>
+        <right offset="-64"/>
+      </anchored>
+      <listdirection>down</listdirection>
+      <listmaxsize>10</listmaxsize>
+      <unsorted />
+    </combobox>
+  </template>
+
+  <template name="spellbook_weight">
+    <basicnumber>
+      <min>1</min>
+      <default>1</default>
+    </basicnumber>
+  </template>
+
+</root>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <windowclass name="spellbooks">
+    <frame>partysheet</frame>
+    <placement>
+      <size width="370" height="500" />
+    </placement>
+    <sizelimits>
+      <minimum width="370" height="500" />
+      <dynamic />
+    </sizelimits>
+    <softclose />
+    <nodelete />
+
+    <sheetdata>
+      <windowtitlebar name="title">
+        <resource>spellbooks_window_title</resource>
+      </windowtitlebar>
+
+      <!-- used by other templates in utility/template_utility.xml -->
+      <anchor_title_partysheet name="columnanchor" />
+      
+      <spellbook_label name="nameLabel">
+        <static textres="spellbooks_label_name" />
+      </spellbook_label>
+      <spellbook_input name="name">
+        <anchored>
+          <top parent="columnanchor" anchor="bottom" relation="relative" offset="7"/>
+          <left parent="columnanchor" offset="110"/>
+          <right offset="-62"/>
+        </anchored>
+      </spellbook_input>
+
+      <button_roll name="nameRoll">
+        <anchored>
+          <top parent="name" />
+          <left parent="name" anchor="right" offset="11" />
+        </anchored>
+        <tooltip textres="spellbooks_nameRoll_tooltip" />
+        <script>
+          function onButtonPress()
+            SpellbookManager.onNameRollClick(window)
+            return true
+          end
+        </script>
+      </button_roll>
+
+      <spellbook_divider/>
+
+      <spellbook_header name="label_pref">
+        <static textres="spellbooks_label_pref" />
+      </spellbook_header>
+
+      <label>
+        <anchored width="20" height="19">
+          <top parent="label_pref" offset="0" />
+          <right anchor="right" offset="-34" />
+        </anchored>
+        <static textres="spellbooks_label_pref_weight" />
+      </label>
+
+      <spellbook_label>
+        <static textres="spellbooks_label_pref_source" />
+      </spellbook_label>
+      <spellbook_combobox name="preferredSource">
+        <script>
+          function onInit()
+            super.onInit()
+            addItems(SpellbookManager.getSources())
+          end
+        </script>
+      </spellbook_combobox>
+      <spellbook_weight name="sourceRelativeWeight">
+        <anchored width="20" height="19">
+          <top parent="preferredSource" offset="1" />
+          <left parent="preferredSource" anchor="right" offset="10" />
+        </anchored>
+        <tooltip textres="spellbooks_pref_weight_tooltip" />
+        <default>Wizard</default>
+      </spellbook_weight>
+
+      <spellbook_label>
+        <static textres="spellbooks_label_pref_school" />
+      </spellbook_label>
+      <spellbook_combobox name="preferredSchool">
+        <script>
+          function onInit()
+            super.onInit()
+            addItems(SpellbookManager.getSchools())
+          end
+        </script>
+      </spellbook_combobox>
+      <spellbook_weight name="schoolRelativeWeight">
+        <anchored width="20" height="19">
+          <top parent="preferredSchool" offset="1" />
+          <left parent="preferredSchool" anchor="right" offset="10" />
+        </anchored>
+        <tooltip textres="spellbooks_pref_weight_tooltip" />
+      </spellbook_weight>
+
+      <spellbook_label>
+        <static textres="spellbooks_label_pref_damage" />
+      </spellbook_label>
+      <spellbook_combobox name="preferredDamageType">
+        <script>
+          function onInit()
+            super.onInit()
+            addItems(SpellbookManager.getDamageTypes())
+          end
+        </script>
+      </spellbook_combobox>
+      <spellbook_weight name="damageTypeRelativeWeight">
+        <anchored width="20" height="19">
+          <top parent="preferredDamageType" offset="1" />
+          <left parent="preferredDamageType" anchor="right" offset="10" />
+        </anchored>
+        <tooltip textres="spellbooks_pref_weight_tooltip" />
+      </spellbook_weight>
+      
+      <spellbook_divider/>
+
+      <spellbook_header>
+        <static textres="spellbooks_label_nb_spells" />
+      </spellbook_header>
+
+      <genericcontrol name="anchor_spellslots">
+        <anchored width="0" height="20">
+          <top parent="columnanchor" anchor="bottom" relation="relative" offset="21" />
+          <left anchor="center" offset="-145" />
+        </anchored>
+        <disabled />
+      </genericcontrol>
+      <number_spellslots name="level1">
+        <default>4</default>
+      </number_spellslots>
+      <number_spellslots name="level2">
+        <default>3</default>
+      </number_spellslots>
+      <number_spellslots name="level3">
+        <default>3</default>
+      </number_spellslots>
+      <number_spellslots name="level4">
+        <default>3</default>
+      </number_spellslots>
+      <number_spellslots name="level5">
+        <default>1</default>
+      </number_spellslots>
+      <number_spellslots name="level6" />
+      <number_spellslots name="level7" />
+      <number_spellslots name="level8" />
+      <number_spellslots name="level9" />
+      <label_fieldtop>
+        <anchored to="level1" />
+        <static>1</static>
+      </label_fieldtop>
+      <label_fieldtop>
+        <anchored to="level2" />
+        <static>2</static>
+      </label_fieldtop>
+      <label_fieldtop>
+        <anchored to="level3" />
+        <static>3</static>
+      </label_fieldtop>
+      <label_fieldtop>
+        <anchored to="level4" />
+        <static>4</static>
+      </label_fieldtop>
+      <label_fieldtop>
+        <anchored to="level5" />
+        <static>5</static>
+      </label_fieldtop>
+      <label_fieldtop>
+        <anchored to="level6" />
+        <static>6</static>
+      </label_fieldtop>
+      <label_fieldtop>
+        <anchored to="level7" />
+        <static>7</static>
+      </label_fieldtop>
+      <label_fieldtop>
+        <anchored to="level8" />
+        <static>8</static>
+      </label_fieldtop>
+      <label_fieldtop>
+        <anchored to="level9" />
+        <static>9</static>
+      </label_fieldtop>
+
+      <button_text>
+        <anchored width="60" height="20">
+          <bottom offset="-28"/>
+          <left parent="columnanchor" offset="3" />
+        </anchored>
+        <state textres="spellbook_label_reset_btn" />
+        <tooltip textres="spellbooks_reset_btn_tooltip" />
+        <font>button-gray</font>
+        <script>
+          function onButtonPress()
+            SpellbookManager.onResetClick(window)
+            return true
+          end
+        </script>
+      </button_text>
+      <button_text>
+        <anchored width="100" height="20">
+          <bottom offset="-28"/>
+          <right offset="-30"/>
+        </anchored>
+        <state textres="spellbook_label_generate_btn" />
+        <font>button-white-bold</font>
+        <script>
+          function onButtonPress()
+            SpellbookManager.onGenerateClick(window)
+            return true
+          end
+        </script>
+      </button_text>
+
+      <resize_partysheet />
+      <close_partysheet />
+    </sheetdata>
+  </windowclass>
+
+</root>

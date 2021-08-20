@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <string name="item_button_spellbook">Spellbooks</string>
+
+  <string name="spellbooks_window_title">Random Spellbook</string>
+  
+  <string name="spellbooks_label_name">Name</string>
+
+  <string name="spellbooks_label_pref">SPELL SELECTION PREFERENCES</string>
+  <string name="spellbooks_label_pref_weight">WT</string>
+  <string name="spellbooks_label_pref_source">Source</string>
+  <string name="spellbooks_label_pref_school">School</string>
+  <string name="spellbooks_label_pref_damage">Damage Type</string>
+
+  <string name="spellbooks_label_nb_spells">NUMBER OF SPELLS PER LEVEL</string>
+
+  <string name="spellbook_label_reset_btn">reset</string>
+  <string name="spellbook_label_generate_btn">GENERATE</string>
+
+  <string name="spellbooks_nameRoll_tooltip">Get a random spellbook name</string>
+  <string name="spellbooks_pref_weight_tooltip">Set the desired relative weight of criteria when choosing spells</string>
+  <string name="spellbooks_reset_btn_tooltip">Reset fields to their default values</string>
+</root>

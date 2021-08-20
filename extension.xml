@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root version="3.0">
+  <properties>
+    <name>Random Spellbook 5e Extension</name>
+    <version>0.1</version>
+    <author>fxg42</author>
+    <description>Generate random spellbooks based on spell selection preferences</description>
+    <loadorder>100</loadorder>
+  </properties>
+
+  <announcement text="Spellbook v0.1" font="emotefont" icon="raven"/>
+
+  <base>
+    <icon name="raven" file="raven-circ-30x30.png"/>
+    
+    <includefile source="spellbooks/graphics/graphics_fonts.xml" />
+    <includefile source="spellbooks/strings/strings.xml" />
+    <includefile source="spellbooks/utility/template_utility.xml" />
+    <includefile source="spellbooks/spellbooks.xml" />
+    <script name="SpellbookManager" file="spellbooks/scripts/manager_spellbooks.lua" />
+  </base>
+</root>

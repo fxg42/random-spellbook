@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <font name="button-white-bold">
+    <fgffile name="graphics/fonts/bold-11.fgf" />
+    <ttf file="graphics/fonts/Noto_Sans/NotoSans-bold.ttf" name="Noto Sans Bold" size="16" />
+    <color value="#FFFFFF" />
+    <shadow offset="1,1" color="#000000" />
+  </font>
+  <font name="button-gray">
+    <fgffile name="graphics/fonts/regular-10.fgf" />
+    <ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+    <color value="#AAAAAA" />
+    <shadow offset="1,1" color="#000000" />
+  </font>
+</root>
