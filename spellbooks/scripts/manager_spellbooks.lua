@@ -35,30 +35,18 @@ local wizardNames = [[
 
 function onInit()
   Interface.onDesktopInit = onDesktopInit
-  addButtonToItemsWindow()
 end
 
 function onDesktopInit()
+  addButtonToItemsWindow()
   buildReferenceTables()
 end
 
 -- Adds a "Spellbook" button on the Items window, next to the "Forge" button.
 
 function addButtonToItemsWindow()
-  local aRecordOverrides = {
-    ["item"] = { 
-      aGMListButtons = {
-          "button_item_armor"
-        , "button_item_weapons"
-        , "button_item_templates"
-        , "button_forge_item"
-        , "button_item_spellbook"
-      }
-    }
-  };
-  for kRecordType,vRecordType in pairs(aRecordOverrides) do
-    LibraryData.overrideRecordTypeInfo(kRecordType, vRecordType);
-  end
+  local aGMListButtons = LibraryData.getRecordTypeInfo("item").aGMListButtons
+  table.insert(aGMListButtons, "button_item_spellbook")
 end
 
 -- Initializes datasources for the comboboxes by scanning and parsing the list

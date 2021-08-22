@@ -3,13 +3,13 @@
 <root version="3.0">
   <properties>
     <name>Random Spellbook 5e Extension</name>
-    <version>0.1</version>
+    <version>0.1.2</version>
     <author>fxg42</author>
     <description>Generate random spellbooks based on spell selection preferences</description>
     <loadorder>100</loadorder>
   </properties>
 
-  <announcement text="Spellbook v0.1" font="emotefont" icon="raven"/>
+  <announcement text="Spellbook v0.1.2" font="emotefont" icon="raven"/>
 
   <base>
     <icon name="raven" file="raven-circ-30x30.png"/>
