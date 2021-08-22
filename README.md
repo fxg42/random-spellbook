@@ -22,7 +22,7 @@ The theme used in this screenshot is [SirMotte's Hearth](https://github.com/SirM
 When selecting spells, the generator will first shuffle the list of spells. It
 will then rank each spell according to the set of chosen preferences. If a
 spell matches the preference, the associated weight is added to the spell's
-rank. Ranked spells or then reverse sorted by rank and the target number of
+rank. Ranked spells are then reverse sorted by rank and the target number of
 spells per spell level are added to the new spellbook.
 
 ### Why
