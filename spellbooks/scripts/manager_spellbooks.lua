@@ -2,32 +2,11 @@
 local sources = {}
 local schools = {}
 local damageTypes = {}
+local wizardNames = {}
 
 -- databaseNode from the window. Initialized on button click and used by
 -- database accessors.
 local databaseNode
-
--- list of wizard names from https://www.fantasynamegenerators.com/wizard-names.php
-local wizardNames = [[
-  Unodius Grineth Orlodor Ashan Izuwyn Arlemorn Craxius Izonior Otaz Grobus
-  Ornas Emesior Eqor Khunell Izoro Oqill Umari Thodarin Oronin Hazin
-  Nowyn Ruphior Usior Puqor Innuhaen Sarhan Elloshan Annaharis Phubras Uvys
-  Onnero Vuras Uthall Ukias Uffaeh Khalin Astrea Nekias Gestrea Modarin
-  Ozahl Ephogorin Rhadelis Affaeh Alanorim Thabaris Dhowyss Ullurish Uhaen Rhirnas
-  Guras Amuharith Saldor Umotior Orin Oqihr Umidyrin Iprix Izin Iqor
-  Rhustrea Uharis Umari Ephegaell Ekore Efarih Evius Etior Ezuxyll Illebine
-  Haras Haveus Inistrea Iveus Ithall Irin Innehion Eharis Erhan Ohion
-  Irranoran Ahirin Evuzin Laffyn Tedyrin Enior Osazahl Ennollaes Volenor Oqor
-  Umnapianne Oruqinn Imowaelle Emideis Chumorith Uwaelle Uwyss Thibess Ithall Ilyn
-  Uziqium Udarin Anowyn Agabarin Ozahl Agrebahn Grodore Evatorn Anaphior Egaleus
-  Anilorh Onnuxone Falyn Adores Ekey Amninilorh Ennenilorh Erish Ozinaxis Ivira Stuphiar
-  Udegeor Alrajahr Imonar Drokore Ufeus Idor Ebahn Unasorin Equam Idastrea Eduffea
-  Zuhith Nirish Illelleas Rhuzora Phiphyx Fistrea Inndrisse Asarass Gaxium Vidius
-  Driviar Grafaris Juqihr Egezax Izamorn Adorune Otarum Adushan Heffaeh Hodyrin
-  Okon Otarish Zalore Nawixe Uzoxea Hustrea Phikely Ovae Uzin Roqirax Alvogorim
-  Uhagan Ogostrum Edor Enzevras Unorim Krazin Agukey Thuzith Azoxone Odrisse
-  Fiphi Istrea Usetrixi Eni Ligaell Iwyss Amnidelis Khiqinn Udel Ushann Onovius
-]]
 
 --
 -- Initializers and hooks
@@ -83,7 +62,7 @@ function buildReferenceTables()
 
   damageTypes = DataCommon.dmgtypes
 
-  wizardNames = StringManager.splitByPattern(wizardNames, "%s+", true)
+  wizardNames = StringManager.splitByPattern(Interface.getString("spellbooks_wizard_names"), "%s+", true)
   shuffle(wizardNames)
 end
 
@@ -326,7 +305,7 @@ end
 -- Utilities
 --
 
---
+-- Returns a random spellbook name.
 
 function getRandomSpellbookName()
   return getRandomItem(wizardNames) .. "'s Spellbook"
